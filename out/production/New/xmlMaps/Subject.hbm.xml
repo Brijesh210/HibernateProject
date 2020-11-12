@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="model1.Subject" table="Subjects">
+        <id name="id" type="java.lang.Long">
+            <column name="subject_id"/>
+            <generator class="native"/>
+        </id>
+
+        <property name="name" type="java.lang.String"/>
+        <set inverse="true" lazy="true" name="teachers" cascade="save-update">
+            <key>
+                <column name="subject_id"/>
+            </key>
+            <one-to-many class="model1.Teacher"/>
+        </set>
+
+        <set inverse="true" lazy="true" name="tests" cascade="save-update">
+            <key>
+                <column name="subject_id"/>
+            </key>
+            <one-to-many class="model1.Test"/>
+        </set>
+    </class>
+</hibernate-mapping>

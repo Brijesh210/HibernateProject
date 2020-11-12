@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model1.FieldOfStudy" table="FieldOfStudies">
+        <id name="id" type="java.lang.Long">
+            <column name="field_of_study_id"/>
+            <generator class="native"/>
+        </id>
+        <property name="name" type="java.lang.String"/>
+        <property name="type" type="java.lang.String"/>
+        <set name="students" inverse="true" cascade="save-update">
+            <key column="field_study_id" />
+            <one-to-many class="model1.Student"/>
+        </set>
+    </class>
+</hibernate-mapping>

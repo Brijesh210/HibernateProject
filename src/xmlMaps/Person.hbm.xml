@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model1.Person" table="Persons">
+        <id name="id" type="java.lang.Long">
+            <column name="person_id"/>
+            <generator class="native"/>
+        </id>
+
+        <property name="fName" type="java.lang.String"/>
+        <property name="sName" type="java.lang.String"/>
+        <property name="email" type="java.lang.String"/>
+    </class>
+
+</hibernate-mapping>

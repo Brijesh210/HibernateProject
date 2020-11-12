@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="model1.Test" table="Tests">
+        <id name="id" type="java.lang.Long">
+            <column name="test_id"/>
+            <generator class="native"/>
+        </id>
+    
+        <property name="grade" type="double"/>
+        <property name="date" type="java.time.LocalDate"/>
+        
+        <many-to-one class="model1.Student" column="student_id" foreign-key="fk_test_stu" name="student" unique="false" cascade="save-update"/>
+        <many-to-one class="model1.Subject" column="subject_id" foreign-key="fk_test_sub" name="subject" unique="false" cascade="save-update"/>
+        
+    </class>
+</hibernate-mapping>

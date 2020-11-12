@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <joined-subclass extends="model1.Person" lazy="false" 
+                     name="model1.Student" table="Students">
+        <key foreign-key="fk_stu_per">
+            <column name="student_id"/>
+        </key>
+        
+        <property name="semester" type="int"/>
+        <property name="indexNo" type="java.lang.String"/>
+        
+        <many-to-one class="model1.FieldOfStudy" column="field_of_study_id" foreign-key="fk_stu_fos" name="fieldOfStudys" unique="true" cascade="save-update"/>
+        <set inverse="true" lazy="true" name="tests">
+            <key>
+                <column name="student_id"/>
+            </key>
+            <one-to-many class="model1.Test"/>
+        </set>
+     
+    </joined-subclass>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="model1.Address" table="Addresses">
+        <id name="id" type="java.lang.Long">
+            <column name="address_id"/>
+            <generator class="native"/>
+        </id>
+        <one-to-one name="person" cascade="save-update"/>
+        <property name="Country" type="java.lang.String"/>
+        <property name="city" type="java.lang.String"/>
+        <property name="PostalCode" type="java.lang.String"/>
+        <property name="street" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

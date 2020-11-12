@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <joined-subclass extends="model1.Person" lazy="false" 
+                     name="model1.Teacher" table="Teachers">
+        <key foreign-key= "fk_tea_per">
+            <column name="teacher_id"/>
+        </key>
+       
+        <property name="title" type="java.lang.String"/>
+        <many-to-one class="model1.Subject" column="subject_id" foreign-key="fk_tea_sub" name="subject" unique="true"/>
+
+    </joined-subclass>
+</hibernate-mapping>
