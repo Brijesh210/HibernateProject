@@ -7,6 +7,7 @@
             <generator class="native"/>
         </id>
 
+        <one-to-one name="address" class="model1.Address" cascade="save-update"/>
         <property name="fName" type="java.lang.String"/>
         <property name="sName" type="java.lang.String"/>
         <property name="email" type="java.lang.String"/>
