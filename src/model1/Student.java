@@ -92,6 +92,11 @@ public class Student extends Person implements Serializable {
         this.tests = tests;
     }
 
-    
-
+    @Override
+    public String toString() {
+        return "Student{" +
+                "semester=" + semester +
+                ", indexNo='" + indexNo + '\'' +
+                '}';
+    }
 }

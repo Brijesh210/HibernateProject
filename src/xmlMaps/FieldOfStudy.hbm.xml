@@ -8,8 +8,8 @@
         </id>
         <property name="name" type="java.lang.String"/>
         <property name="type" type="java.lang.String"/>
-        <set name="students" inverse="true" cascade="save-update">
-            <key column="field_study_id" />
+        <set name="students" inverse="true" cascade="save-update" >
+            <key column="field_of_study_id" foreign-key="fk_fos"/>
             <one-to-many class="model1.Student"/>
         </set>
     </class>

@@ -68,12 +68,12 @@ public class Teacher extends Person implements Serializable {
     public void setSubject(Subject subject) {
         this.subject = subject;
     }
-    
-    
-    
+
     @Override
     public String toString() {
-        return "Teacher{" + "title=" + title + '}';
+        return "Teacher{" +
+                "title='" + title + '\'' +
+                ", subject=" + subject +
+                '}';
     }
-    
 }

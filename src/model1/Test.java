@@ -42,10 +42,12 @@ public class Test implements Serializable {
     
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "student_id")
+//    @JoinColumn(name="student_id", foreignKey = @javax.persistence.ForeignKey(name = "fk_test_stu"))
     private Student student;
     
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "subject_id")
+//    @JoinColumn(name="subject_id", foreignKey = @javax.persistence.ForeignKey(name = "fk_test_sub"))
     private Subject subject;
 
     public Test() {
@@ -98,8 +100,10 @@ public class Test implements Serializable {
 
     @Override
     public String toString() {
-        return "Test{" + "id=" + id + ", date=" + date + ", grade=" + grade + ", student=" + student + ", subject=" + subject + '}';
+        return "Test{" +
+                "id=" + id +
+                ", date=" + date +
+                ", grade=" + grade +
+                '}';
     }
- 
-    
 }

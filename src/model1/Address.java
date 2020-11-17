@@ -21,8 +21,7 @@ public class Address implements Serializable {
     private String city;
     private String postalCode;
     private String street;
-    
-    
+
     @OneToOne
     private Person person;
 
@@ -87,7 +86,12 @@ public class Address implements Serializable {
 
     @Override
     public String toString() {
-        return "Address{" + "id=" + id + ", country=" + country + ", city=" + city + ", postalCode=" + postalCode + ", street=" + street + '}';
+        return "Address{" +
+                "id=" + id +
+                ", country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", street='" + street + '\'' +
+                '}';
     }
-
 }

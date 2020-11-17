@@ -92,13 +92,12 @@ public class Subject implements Serializable {
         this.tests = tests;
     }
 
-   
-
-
-
     @Override
     public String toString() {
-        return "Subject{" + "id=" + id + ", name=" + name + ", students=" + ", tests=" + tests + '}';
+        return "Subject{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tests=" + tests +
+                '}';
     }
-    
 }

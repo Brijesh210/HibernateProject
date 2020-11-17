@@ -84,7 +84,10 @@ public class FieldOfStudy implements Serializable {
 
     @Override
     public String toString() {
-        return "FieldOfStudy{" + "id=" + id + ", name=" + name + ", Type=" + type + ", students=" + '}';
+        return "FieldOfStudy{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
-    
 }

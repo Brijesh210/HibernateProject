@@ -25,7 +25,6 @@ import org.hibernate.annotations.CascadeType;
  */
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-//@MappedSuperclass
 @Table(name = "Persons")
 public class Person implements Serializable {
 
@@ -117,11 +116,16 @@ public class Person implements Serializable {
     public void setAddress(Address address) {
         this.address = address;
     }
-    
-   
+
+
     @Override
     public String toString() {
-        return "Person{" + "id=" + id + ", fName=" + fName + ", sName=" + sName + ", email=" + email + ", address=" + address + '}';
+        return "Person{" +
+                "id=" + id +
+                ", fName='" + fName + '\'' +
+                ", sName='" + sName + '\'' +
+                ", email='" + email + '\'' +
+                ", address=" + address +
+                '}';
     }
-   
 }
