@@ -37,7 +37,7 @@ public class Person implements Serializable {
 //    private Address address;
     @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @JoinColumn(name = "address_id", foreignKey = @javax.persistence.ForeignKey(name = "kf_person_address"))
+    @JoinColumn(name = "address_id", foreignKey = @javax.persistence.ForeignKey(name = "fk_person_address"))
     private Address address;
 
     public Person() {

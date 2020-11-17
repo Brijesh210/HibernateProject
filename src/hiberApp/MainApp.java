@@ -12,7 +12,7 @@ import org.hibernate.SessionFactory;
  */
 public final class MainApp {
 
-    private static final SessionFactory SESSION_FACTORY = HiberUtil.getSessionFactory(HiberUtil.Mapping.ANN);
+    private static final SessionFactory SESSION_FACTORY = HiberUtil.getSessionFactory(HiberUtil.Mapping.XML);
 
     public static void main(String[] args) {
 

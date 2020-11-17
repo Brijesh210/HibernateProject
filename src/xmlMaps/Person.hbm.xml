@@ -7,7 +7,10 @@
             <generator class="native"/>
         </id>
 
-        <one-to-one name="address" class="model1.Address" cascade="save-update" foreign-key="fk_per_fos"/>
+        <many-to-one cascade="save-update" class="model1.Address"
+                     column="address_id" foreign-key="fk_person_address"
+                     name="address" unique="false"/>
+
         <property name="fName" type="java.lang.String"/>
         <property name="sName" type="java.lang.String"/>
         <property name="email" type="java.lang.String"/>
