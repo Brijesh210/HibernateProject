@@ -38,19 +38,13 @@ public class Teacher extends Person implements Serializable {
         this.title = title;
     }
 
-    public Teacher(String fName, String sName, String email) {
-        super(fName, sName, email);
-    }
-    
-    public Teacher(String title, Person person) {
-        super();
-        this.title = title;
-    }
-
-    public Teacher(String title, Subject subject, String fName, String sName, String email) {
-        super(fName, sName, email);
+    public Teacher(String title, Subject subject) {
         this.title = title;
         this.subject = subject;
+    }
+
+    public Teacher(String fName, String sName, String email) {
+        super(fName, sName, email);
     }
 
     public String getTitle() {

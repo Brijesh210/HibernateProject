@@ -22,8 +22,8 @@ public class Address implements Serializable {
     private String postalCode;
     private String street;
 
-    @OneToOne
-    private Person person;
+//    @OneToOne
+//    private Person person;
 
 
     public Address() {
@@ -36,13 +36,6 @@ public class Address implements Serializable {
         this.street = street;
     }
 
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
 
     public Long getId() {
         return id;

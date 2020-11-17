@@ -43,12 +43,8 @@ public class Student extends Person implements Serializable {
     public Student() {
     }
 
-    public Student(String fName, String sName, String email) {
-        super(fName, sName, email);
-    }
 
     public Student(FieldOfStudy fieldOfStudys, String indexNo, int semester, String fName, String sName, String email) {
-        super(fName, sName, email);
         this.fieldOfStudys = fieldOfStudys;
         this.indexNo = indexNo;
         this.semester = semester;
@@ -58,7 +54,10 @@ public class Student extends Person implements Serializable {
         this.fieldOfStudys = fieldOfStudys;
         this.semester = semester;
     }
-    
+
+    public Student(String fName, String sName, String email) {
+        super(fName, sName, email);
+    }
 
     public int getSemester() {
         return semester;

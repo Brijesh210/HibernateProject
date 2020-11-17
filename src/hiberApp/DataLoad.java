@@ -101,19 +101,19 @@ public final class DataLoad {
             HashSet<Test> setTest2 = new HashSet<>();
             HashSet<Test> setTest3 = new HashSet<>();
 
-            setTest1.add(test3);
-            setTest1.add(test2);
-            setTest1.add(test1);
-            setTest2.add(test2);
-            setTest2.add(test3);
-            setTest3.add(test1);
-
-            student1.setTests(setTest1);
-            student2.setTests(setTest3);
-
-            subject1.setTests(setTest3);
-            subject1.setTests(setTest2);
-            subject2.setTests(setTest1);
+//            setTest1.add(test3);
+//            setTest1.add(test2);
+//            setTest1.add(test1);
+//            setTest2.add(test2);
+//            setTest2.add(test3);
+//            setTest3.add(test1);
+//
+//            student1.setTests(setTest1);
+//            student2.setTests(setTest3);
+//
+//            subject1.setTests(setTest3);
+//            subject1.setTests(setTest2);
+//            subject2.setTests(setTest1);
 
             test1.setStudent(student2);
             test1.setSubject(subject2);
