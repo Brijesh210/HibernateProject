@@ -54,7 +54,7 @@ public final class HiberUtil {
             File mappingDir = new File("src\\xmlMaps");
             Configuration config = new Configuration().configure();
 
-            config.setProperty("hibernate.show_sql", "false");
+            config.setProperty("hibernate.show_sql", "true");
             config.addDirectory(mappingDir);
             SessionFactory sf = config.buildSessionFactory();
            
@@ -72,7 +72,7 @@ public final class HiberUtil {
  public static SessionFactory getANNSessionFactory() {
         try {
             Configuration config = new Configuration().configure();
-            config.setProperty("hibernate.show_sql", "false");
+            config.setProperty("hibernate.show_sql", "true");
                       
             config.addAnnotatedClass(Address.class)
             .addAnnotatedClass(Subject.class)

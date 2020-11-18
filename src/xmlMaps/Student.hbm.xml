@@ -14,9 +14,7 @@
         <many-to-one class="model1.FieldOfStudy"
                      column="field_of_study_id"
                      foreign-key="fk_stu_fos"
-                     name="fieldOfStudys"
-                     unique="true"
-                     cascade="save-update"/>
+                     name="fieldOfStudys" unique="true" cascade="save-update"/>
         <set inverse="true" lazy="true" name="tests">
             <key>
                 <column name="student_id"/>

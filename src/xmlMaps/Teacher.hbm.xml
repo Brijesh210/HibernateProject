@@ -9,7 +9,11 @@
         </key>
        
         <property name="title" type="java.lang.String"/>
-        <many-to-one class="model1.Subject" column="subject_id" foreign-key="fk_tea_sub" name="subject" unique="true"/>
+        <many-to-one
+                class="model1.Subject"
+                column="subject_id"
+                foreign-key="fk_tea_sub"
+                name="subject" unique="true"/>
 
     </joined-subclass>
 </hibernate-mapping>

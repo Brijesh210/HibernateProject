@@ -96,10 +96,13 @@ public final class DataLoad {
             Test test1 = new Test(LocalDate.parse("2020-09-20"), 3);
             Test test2 = new Test(LocalDate.parse("2020-09-21"), 5);
             Test test3 = new Test(LocalDate.parse("2020-09-22"), 4);
+            Test test4 = new Test(LocalDate.parse("2020-09-24"), 4);
+            Test test5 = new Test(LocalDate.parse("2020-09-25"), 4);
 
-            HashSet<Test> setTest1 = new HashSet<>();
-            HashSet<Test> setTest2 = new HashSet<>();
-            HashSet<Test> setTest3 = new HashSet<>();
+
+//            HashSet<Test> setTest1 = new HashSet<>();
+//            HashSet<Test> setTest2 = new HashSet<>();
+//            HashSet<Test> setTest3 = new HashSet<>();
 
 //            setTest1.add(test3);
 //            setTest1.add(test2);
@@ -124,9 +127,17 @@ public final class DataLoad {
             test3.setStudent(student2);
             test3.setSubject(subject2);
 
+            test4.setStudent(student1);
+            test4.setSubject(subject2);
+
+            test5.setStudent(student2);
+            test5.setSubject(subject2);
+
             session.save(test1);
             session.save(test2);
             session.save(test3);
+            session.save(test4);
+            session.save(test5);
 
             tx.commit();
         }

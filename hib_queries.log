@@ -1,0 +1,74 @@
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator:45] QueryTranslatorFactory: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@3404e5c4
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.QueryTranslatorImpl:292] parse() - HQL: select generatedAlias0 from model1.Address as generatedAlias0 where generatedAlias0.city like :param0
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.ErrorTracker:97] throwQueryException() : no errors
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.QueryTranslatorImpl:313] --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[IDENT] Node: 'model1'
+    |  |     |  \-[IDENT] Node: 'Address'
+    |  |     \-[ALIAS] Node: 'generatedAlias0'
+    |  \-[SELECT] Node: 'select'
+    |     \-[IDENT] Node: 'generatedAlias0'
+    \-[WHERE] Node: 'where'
+       \-[LIKE] Node: 'like'
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'generatedAlias0'
+          |  \-[IDENT] Node: 'city'
+          \-[COLON] Node: ':'
+             \-[IDENT] Node: 'param0'
+
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.antlr.HqlSqlBaseWalker:124] select << begin [level=1, statement=select]
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromElement:153] FromClause{level=1} : model1.Address (generatedAlias0) -> address0_
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromReferenceNode:60] Resolved : generatedAlias0 -> address0_.address_id
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromReferenceNode:60] Resolved : generatedAlias0 -> address0_.address_id
+17 Nov 2020 21:59:03 [TRACE] [org.hibernate.hql.internal.ast.tree.FromElement:664] Handling property dereference [model1.Address (generatedAlias0) -> city (class)]
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.tree.DotNode:694] getDataType() : city -> org.hibernate.type.StringType@58670130
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromReferenceNode:60] Resolved : generatedAlias0.city -> address0_.city
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.antlr.HqlSqlBaseWalker:128] select : finishing up [level=1, statement=select]
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.HqlSqlWalker:760] processQuery() :  ( SELECT ( {select clause} address0_.address_id ) ( FromClause{level=1} Addresses address0_ ) ( where ( like ( address0_.city address0_.address_id city ) ? ) ) )
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.util.JoinProcessor:129] Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    | referencedTables(entity Address): [Addresses]
+    |  +-IdentNode
+    |  | persister: SingleTableEntityPersister(model1.Address)
+    |  | originalText: generatedAlias0
+    |  \-SqlFragment
+    +-FromClause
+    |  \-FromElement
+    \-SqlNode
+       \-BinaryLogicOperatorNode
+          +-DotNode
+          | persister: SingleTableEntityPersister(model1.Address)
+          | path: generatedAlias0.city
+          |  +-IdentNode
+          |  | persister: SingleTableEntityPersister(model1.Address)
+          |  | originalText: generatedAlias0
+          |  \-IdentNode
+          |    persister: null
+          |    originalText: city
+          \-ParameterNode
+
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.util.JoinProcessor:296] Using FROM fragment [Addresses address0_]
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.antlr.HqlSqlBaseWalker:132] select >> end [level=1, statement=select]
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.QueryTranslatorImpl:279] --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (Addresses)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'address0_.address_id as address_1_0_' {alias=generatedAlias0, className=model1.Address, tableAlias=address0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'address0_.Country as country2_0_, address0_.city as city3_0_, address0_.PostalCode as postalco4_0_, address0_.street as street5_0_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[generatedAlias0], fromElementByTableAlias=[address0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'Addresses address0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias0,role=null,tableName=Addresses,tableAlias=address0_,origin=null,columns={,className=model1.Address}}
+    \-[WHERE] SqlNode: 'where'
+       \-[LIKE] BinaryLogicOperatorNode: 'like'
+          +-[DOT] DotNode: 'address0_.city' {propertyName=city,dereferenceType=PRIMITIVE,getPropertyPath=city,path=generatedAlias0.city,tableAlias=address0_,className=model1.Address,classAlias=generatedAlias0}
+          |  +-[ALIAS_REF] IdentNode: 'address0_.address_id' {alias=generatedAlias0, className=model1.Address, tableAlias=address0_}
+          |  \-[IDENT] IdentNode: 'city' {originalText=city}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=param0, expectedType=org.hibernate.type.StringType@58670130}
+
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.ErrorTracker:97] throwQueryException() : no errors
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.QueryTranslatorImpl:258] HQL: select generatedAlias0 from model1.Address as generatedAlias0 where generatedAlias0.city like :param0
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.QueryTranslatorImpl:259] SQL: select address0_.address_id as address_1_0_, address0_.Country as country2_0_, address0_.city as city3_0_, address0_.PostalCode as postalco4_0_, address0_.street as street5_0_ from Addresses address0_ where address0_.city like ?
+17 Nov 2020 21:59:03 [DEBUG] [org.hibernate.hql.internal.ast.ErrorTracker:97] throwQueryException() : no errors

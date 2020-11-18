@@ -22,9 +22,6 @@ public class Address implements Serializable {
     private String postalCode;
     private String street;
 
-//    @OneToOne
-//    private Person person;
-
 
     public Address() {
     }
@@ -75,6 +72,10 @@ public class Address implements Serializable {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     @Override

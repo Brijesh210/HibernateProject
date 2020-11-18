@@ -12,15 +12,17 @@ import org.hibernate.SessionFactory;
  */
 public final class MainApp {
 
-    private static final SessionFactory SESSION_FACTORY = HiberUtil.getSessionFactory(HiberUtil.Mapping.XML);
+    private static final SessionFactory SESSION_FACTORY = HiberUtil.getSessionFactory(HiberUtil.Mapping.ANN);
 
     public static void main(String[] args) {
 
-          final DataLoad dataLoad = new DataLoad();
-          dataLoad.createData(SESSION_FACTORY);
-//        final DataQueries dataQueries = new DataQueries();
-      //  dataQueries.showAll(SESSION_FACTORY);
+//          final DataLoad dataLoad = new DataLoad();
+//          dataLoad.createData(SESSION_FACTORY);
+        final DataQueries dataQueries = new DataQueries();
 //        dataQueries.showAllStudent(SESSION_FACTORY);
-
+//        dataQueries.showAllStudent(SESSION_FACTORY);
+//       dataQueries.showGoupbyTest(SESSION_FACTORY);
+//        dataQueries.showImplicitJoinOnPersonsAddresses(SESSION_FACTORY);
+        dataQueries.showExplicitJoinOnTeachersSubjects(SESSION_FACTORY);
     }
 }

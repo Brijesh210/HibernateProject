@@ -34,7 +34,7 @@ public class Student extends Person implements Serializable {
     
     @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @JoinColumn(name="field_of_study_id", foreignKey = @javax.persistence.ForeignKey(name = "fk_fos_stu"))
+    @JoinColumn(name="field_of_study_id", foreignKey = @javax.persistence.ForeignKey(name = "fk_stu_fos"))
     private FieldOfStudy fieldOfStudys;
     
     @OneToMany(mappedBy = "student")

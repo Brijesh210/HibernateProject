@@ -8,9 +8,9 @@
         </id>
         <property name="name" type="java.lang.String"/>
         <property name="type" type="java.lang.String"/>
-        <set name="students" inverse="true" cascade="save-update" >
-            <key column="field_of_study_id" />
-            <one-to-many class="model1.Student"/>
-        </set>
+<!--        <set name="students" inverse="true" cascade="save-update" >-->
+<!--            <key column="field_of_study_id" />-->
+<!--            <one-to-many class="model1.Student"/>-->
+<!--        </set>-->
     </class>
 </hibernate-mapping>
