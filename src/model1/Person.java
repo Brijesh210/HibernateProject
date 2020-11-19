@@ -1,15 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model1;
 
-import java.io.Serializable;
-import javax.persistence.*;
-
 import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Brijesh
@@ -31,10 +24,6 @@ public class Person implements Serializable {
 
     private String email;
 
-    //    @OneToOne
-//    @Cascade(CascadeType.ALL)
-//    @JoinColumn(name="ADDRESS_ID", foreignKey = @javax.persistence.ForeignKey(name="FK_PERSON_ADDRESS"))
-//    private Address address;
     @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinColumn(name = "address_id", foreignKey = @javax.persistence.ForeignKey(name = "fk_person_address"))

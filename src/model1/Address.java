@@ -6,6 +6,7 @@ import javax.persistence.*;
 /**
  *
  * @author Brijesh
+ * @version 1.0
  */
 @Entity
 @Table(name="Addresses")
@@ -32,7 +33,6 @@ public class Address implements Serializable {
         this.postalCode = postalCode;
         this.street = street;
     }
-
 
     public Long getId() {
         return id;

@@ -1,35 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hiberApp;
 
-import model1.*;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Queue;
-
-import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.w3c.dom.ls.LSOutput;
-
+import org.hibernate.query.Query;
 import javax.persistence.Tuple;
+import java.util.List;
 
-import static org.hibernate.loader.Loader.SELECT;
-
-/* 
+/**
  @author Brijesh
  */
 public final class DataQueries {
-
-//    Queries (each query in JPQL and Criteria API version):
-//
-//    Query with simple projection and simple selection
-//    Query with implicite join
-//    Query with explicite join
-//    Query with aggregation and grouping
 
 //  Projection
     public void showAddressWhereCity(SessionFactory SESSION_FACTORY) {
@@ -55,7 +35,7 @@ public final class DataQueries {
     }
 
 //      select count(test_id), student_id from tests group by student_id;
-    public void showGoupbyTest(SessionFactory SESSION_FACTORY) {
+    public void showGroupByTest(SessionFactory SESSION_FACTORY) {
         try (Session session = SESSION_FACTORY.openSession()) {
             Query query = session.createQuery("SELECT t.student.id , COUNT(t.id) " +
                     "FROM Test t " +

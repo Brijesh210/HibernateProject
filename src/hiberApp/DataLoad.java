@@ -1,24 +1,17 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hiberApp;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 import model1.*;
-
-import java.util.HashSet;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDate;
+
 /* 
- @author LabHiber
+ @author Brijesh
+ @version 1.3
  */
 public final class DataLoad {
     /**

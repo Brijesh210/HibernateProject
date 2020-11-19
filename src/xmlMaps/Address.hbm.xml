@@ -8,9 +8,9 @@
             <generator class="native" />
         </id>
 <!--        <one-to-many name="person" class="model1.Person" cascade="save-update" constrained="true"/>-->
-        <property name="Country" type="java.lang.String"/>
+        <property name="country" type="java.lang.String"/>
         <property name="city" type="java.lang.String"/>
-        <property name="PostalCode" type="java.lang.String"/>
+        <property name="postalCode" type="java.lang.String"/>
         <property name="street" type="java.lang.String"/>
     </class>
 </hibernate-mapping>
