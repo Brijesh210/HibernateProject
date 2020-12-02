@@ -82,7 +82,6 @@ public final class MainAppJPA {
         CriteriaQuery q = cb.createTupleQuery();
         Root<Test> c = q.from(Test.class);
         q.multiselect(cb.count(c.get("id")), c.get("student"))
-
                 .groupBy(c.get("student"));
         List<Tuple> resultList = em.createQuery(q).getResultList();
         resultList.forEach(t -> {

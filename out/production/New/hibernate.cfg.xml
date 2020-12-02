@@ -4,7 +4,7 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:6033/hiberlab12</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:6033/hibernate12</property>
     <property name="hibernate.connection.username">root</property>
     <!--<property name="hibernate.connection.password">hiber</property>-->
     <!--<property name="hibernate.connection.pool_size">5</property>-->

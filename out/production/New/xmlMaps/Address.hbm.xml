@@ -7,7 +7,6 @@
             <column name="address_id" />
             <generator class="native" />
         </id>
-<!--        <one-to-many name="person" class="model1.Person" cascade="save-update" constrained="true"/>-->
         <property name="country" type="java.lang.String"/>
         <property name="city" type="java.lang.String"/>
         <property name="postalCode" type="java.lang.String"/>

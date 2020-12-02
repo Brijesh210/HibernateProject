@@ -11,7 +11,7 @@ import java.util.List;
  */
 public final class DataQueries {
 
-//  Projection
+//  Selection
     public void showAddressWhereCity(SessionFactory SESSION_FACTORY) {
         try (Session session = SESSION_FACTORY.openSession()) {
             String hql = "FROM model1.Address " +
@@ -22,7 +22,7 @@ public final class DataQueries {
             results.forEach(System.out::println);
         }
     }
-//    Selection
+//    Projection
     public void showAllStudent(SessionFactory SESSION_FACTORY) {
         try (Session session = SESSION_FACTORY.openSession()) {
             String hql = "SELECT s " +
@@ -46,6 +46,8 @@ public final class DataQueries {
                 }
             }
     }
+
+//    Implicit
 //    select p.fName , a.country from persons p , addresses a where p.address_id = a.address_id;
     public  void showImplicitJoinOnPersonsAddresses(SessionFactory SESSION_FACTORY){
         try(Session session = SESSION_FACTORY.openSession()){
@@ -59,6 +61,7 @@ public final class DataQueries {
         }
     }
 
+//    Explicit
 //    select t.title , s.name from teachers t join subjects s on t.subject_id = s.subject_id;
     public void showExplicitJoinOnTeachersSubjects(SessionFactory SESSION_FACTORY) {
         try (Session session = SESSION_FACTORY.openSession()) {
