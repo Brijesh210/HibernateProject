@@ -22,7 +22,7 @@ public final class DataQueries {
             results.forEach(System.out::println);
         }
     }
-//    Projection
+//  Projection
     public void showAllStudent(SessionFactory SESSION_FACTORY) {
         try (Session session = SESSION_FACTORY.openSession()) {
             String hql = "SELECT s " +
@@ -34,26 +34,28 @@ public final class DataQueries {
         }
     }
 
-//      select count(test_id), student_id from tests group by student_id;
+//  Group By
     public void showGroupByTest(SessionFactory SESSION_FACTORY) {
         try (Session session = SESSION_FACTORY.openSession()) {
-            Query query = session.createQuery("SELECT t.student.id , COUNT(t.id) " +
-                    "FROM Test t " +
-                    "GROUP BY t.student.id ",Tuple.class);
-                List<Tuple> results = query.getResultList();
+//            Query query = session.createQuery("select count(t.id) ,t.student.id"  +
+//                    " from Test t group by t.student.id", Tuple.class);
+            Query query = session.createQuery("select s.tests.size, s.id "  +
+                    " from Student s group by s.id", Tuple.class);
+
+            List<Tuple> results = query.getResultList();
                 for( var r : results){
                     System.out.println(r.get(0) + " " + r.get(1));
                 }
             }
     }
 
+
 //    Implicit
-//    select p.fName , a.country from persons p , addresses a where p.address_id = a.address_id;
     public  void showImplicitJoinOnPersonsAddresses(SessionFactory SESSION_FACTORY){
         try(Session session = SESSION_FACTORY.openSession()){
-            Query query = session.createQuery("SELECT p.fName , a.postalCode " +
-                    "FROM Person p , Address a " +
-                    "WHERE p.address = a.id ",Tuple.class);
+                Query query = session.createQuery("SELECT p.fName , p.address.postalCode " +
+                    "FROM Person p " +
+                    "WHERE p.address.country like 'Germany'",Tuple.class);
             List<Tuple> results = query.getResultList();
             for( var r : results){
                 System.out.println(r.get(0) + "  |  " + r.get(1));
@@ -61,13 +63,11 @@ public final class DataQueries {
         }
     }
 
-//    Explicit
-//    select t.title , s.name from teachers t join subjects s on t.subject_id = s.subject_id;
+//    Explicit  (One to Many)
     public void showExplicitJoinOnTeachersSubjects(SessionFactory SESSION_FACTORY) {
         try (Session session = SESSION_FACTORY.openSession()) {
-            Query query = session.createQuery("SELECT t.title , s.name " +
-                    "FROM Teacher t " +
-                    "JOIN Subject s ON t.subject.id = s.id ", Tuple.class);
+            Query query = session.createQuery("SELECT t.title , t.subject.name " +
+                    "FROM Teacher t ", Tuple.class);
             List<Tuple> results = query.getResultList();
             for (var r : results) {
                 System.out.println(r.get(0) + "  |  " + r.get(1));

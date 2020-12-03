@@ -23,7 +23,7 @@ public final class MainApp {
 
 //        dataQueries.showAllStudent(SESSION_FACTORY);
 //        dataQueries.showAllStudent(SESSION_FACTORY);
-//        dataQueries.showGroupByTest(SESSION_FACTORY);
+//            dataQueries.showGroupByTest(SESSION_FACTORY);
 //        dataQueries.showImplicitJoinOnPersonsAddresses(SESSION_FACTORY);
 //        dataQueries.showExplicitJoinOnTeachersSubjects(SESSION_FACTORY);
     }

@@ -1,0 +1,117 @@
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator:45] QueryTranslatorFactory: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@31aab981
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.QueryTranslatorImpl:292] parse() - HQL: select count(generatedAlias0.id), generatedAlias0.student from model1.Test as generatedAlias0 group by generatedAlias0.student
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.ErrorTracker:97] throwQueryException() : no errors
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.QueryTranslatorImpl:313] --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[IDENT] Node: 'model1'
+    |  |     |  \-[IDENT] Node: 'Test'
+    |  |     \-[ALIAS] Node: 'generatedAlias0'
+    |  \-[SELECT] Node: 'select'
+    |     +-[COUNT] Node: 'count'
+    |     |  \-[DOT] Node: '.'
+    |     |     +-[IDENT] Node: 'generatedAlias0'
+    |     |     \-[IDENT] Node: 'id'
+    |     \-[DOT] Node: '.'
+    |        +-[IDENT] Node: 'generatedAlias0'
+    |        \-[IDENT] Node: 'student'
+    \-[GROUP] Node: 'group'
+       \-[DOT] Node: '.'
+          +-[IDENT] Node: 'generatedAlias0'
+          \-[IDENT] Node: 'student'
+
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.antlr.HqlSqlBaseWalker:124] select << begin [level=1, statement=select]
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromElement:153] FromClause{level=1} : model1.Test (generatedAlias0) -> test0_
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromReferenceNode:60] Resolved : generatedAlias0 -> test0_.test_id
+03 Dec 2020 20:09:42 [TRACE] [org.hibernate.hql.internal.ast.tree.FromElement:664] Handling property dereference [model1.Test (generatedAlias0) -> id (class)]
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.DotNode:694] getDataType() : id -> org.hibernate.type.LongType@59d2400d
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromReferenceNode:60] Resolved : generatedAlias0.id -> test0_.test_id
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromReferenceNode:60] Resolved : generatedAlias0 -> test0_.test_id
+03 Dec 2020 20:09:42 [TRACE] [org.hibernate.hql.internal.ast.tree.FromElement:664] Handling property dereference [model1.Test (generatedAlias0) -> student (class)]
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.DotNode:694] getDataType() : student -> org.hibernate.type.ManyToOneType(model1.Student)
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.DotNode:439] dereferenceEntityJoin() : generating join for student in model1.Test (<no alias>) parent = [ {null} ]
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromElement:153] FromClause{level=1} : model1.Student (<no alias>) -> student1_
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromClause:287] addJoinByPathMap() : generatedAlias0.student -> FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=Students,tableAlias=student1_,origin=Tests test0_,columns={test0_.student_id,className=model1.Student}}
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromReferenceNode:60] Resolved : generatedAlias0.student -> test0_.student_id
+03 Dec 2020 20:09:42 [TRACE] [org.hibernate.hql.internal.ast.tree.FromElement:664] Handling property dereference [model1.Test (generatedAlias0) -> student (class)]
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromReferenceNode:60] Resolved : generatedAlias0 -> test0_.test_id
+03 Dec 2020 20:09:42 [TRACE] [org.hibernate.hql.internal.ast.tree.FromElement:664] Handling property dereference [model1.Test (generatedAlias0) -> student (class)]
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.DotNode:694] getDataType() : student -> org.hibernate.type.ManyToOneType(model1.Student)
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.DotNode:652] dereferenceShortcut() : property student in model1.Test does not require a join.
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.DotNode:681] Terminal getPropertyPath = [student]
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.tree.FromReferenceNode:60] Resolved : generatedAlias0.student -> test0_.student_id
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.antlr.HqlSqlBaseWalker:128] select : finishing up [level=1, statement=select]
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.HqlSqlWalker:760] processQuery() :  ( SELECT ( {select clause} ( count ( test0_.test_id test0_.test_id id ) ) ( test0_.student_id test0_.test_id student ) ) ( FromClause{level=1} ( Tests test0_ Students student1_ ) ) ( group ( test0_.student_id test0_.test_id student ) ) )
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.util.JoinProcessor:129] Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    | referencedTables(entity Student): [Persons, Students]
+    |  +-CountNode
+    |  |  \-DotNode
+    |  |    persister: SingleTableEntityPersister(model1.Test)
+    |  |    path: generatedAlias0.id
+    |  |     +-IdentNode
+    |  |     | persister: SingleTableEntityPersister(model1.Test)
+    |  |     | originalText: generatedAlias0
+    |  |     \-IdentNode
+    |  |       persister: null
+    |  |       originalText: id
+    |  +-SqlNode
+    |  +-DotNode
+    |  | persister: JoinedSubclassEntityPersister(model1.Student)
+    |  | path: generatedAlias0.student
+    |  |  +-IdentNode
+    |  |  | persister: SingleTableEntityPersister(model1.Test)
+    |  |  | originalText: generatedAlias0
+    |  |  \-IdentNode
+    |  |    persister: null
+    |  |    originalText: student
+    |  +-SqlNode
+    |  +-SqlFragment
+    |  \-SqlFragment
+    +-FromClause
+    |  \-FromElement
+    |     \-FromElement
+    \-SqlNode
+       \-DotNode
+         persister: SingleTableEntityPersister(model1.Test)
+         path: generatedAlias0.student
+          +-IdentNode
+          | persister: SingleTableEntityPersister(model1.Test)
+          | originalText: generatedAlias0
+          \-IdentNode
+            persister: null
+            originalText: student
+
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.util.JoinProcessor:296] Using FROM fragment [Tests test0_]
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.util.JoinProcessor:296] Using FROM fragment [inner join Students student1_ on test0_.student_id=student1_.student_id inner join Persons student1_1_ on student1_.student_id=student1_1_.person_id]
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.antlr.HqlSqlBaseWalker:132] select >> end [level=1, statement=select]
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.QueryTranslatorImpl:279] --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (Students,Persons,Tests)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[COUNT] CountNode: 'count'
+    |  |  \-[DOT] DotNode: 'test0_.test_id' {propertyName=id,dereferenceType=PRIMITIVE,getPropertyPath=id,path=generatedAlias0.id,tableAlias=test0_,className=model1.Test,classAlias=generatedAlias0}
+    |  |     +-[ALIAS_REF] IdentNode: 'test0_.test_id' {alias=generatedAlias0, className=model1.Test, tableAlias=test0_}
+    |  |     \-[IDENT] IdentNode: 'id' {originalText=id}
+    |  +-[SELECT_COLUMNS] SqlNode: ' as col_0_0_'
+    |  +-[DOT] DotNode: 'test0_.student_id' {propertyName=student,dereferenceType=ENTITY,getPropertyPath=student,path=generatedAlias0.student,tableAlias=student1_,className=model1.Student,classAlias=null}
+    |  |  +-[ALIAS_REF] IdentNode: 'test0_.test_id' {alias=generatedAlias0, className=model1.Test, tableAlias=test0_}
+    |  |  \-[IDENT] IdentNode: 'student' {originalText=student}
+    |  +-[SELECT_COLUMNS] SqlNode: ' as col_1_0_'
+    |  +-[SQL_TOKEN] SqlFragment: 'student1_.student_id as person_i1_2_'
+    |  \-[SQL_TOKEN] SqlFragment: 'student1_1_.address_id as address_2_2_, student1_1_.fName as fname3_2_, student1_1_.sName as sname4_2_, student1_1_.email as email5_2_, student1_.semester as semester2_3_, student1_.indexNo as indexno3_3_, student1_.field_of_study_id as field_of4_3_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=2, fromElements=2, fromElementByClassAlias=[generatedAlias0], fromElementByTableAlias=[test0_, student1_], fromElementsByPath=[generatedAlias0.student], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'Tests test0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias0,role=null,tableName=Tests,tableAlias=test0_,origin=null,columns={,className=model1.Test}}
+    |     \-[JOIN_FRAGMENT] FromElement: 'inner join Students student1_ on test0_.student_id=student1_.student_id inner join Persons student1_1_ on student1_.student_id=student1_1_.person_id' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=model1.Test.student,tableName=Students,tableAlias=student1_,origin=Tests test0_,columns={test0_.student_id,className=model1.Student}}
+    \-[GROUP] SqlNode: 'group'
+       \-[DOT] DotNode: 'test0_.student_id' {propertyName=student,dereferenceType=UNKNOWN,getPropertyPath=student,path=generatedAlias0.student,tableAlias=test0_,className=model1.Test,classAlias=generatedAlias0}
+          +-[ALIAS_REF] IdentNode: 'test0_.test_id' {alias=generatedAlias0, className=model1.Test, tableAlias=test0_}
+          \-[IDENT] IdentNode: 'student' {originalText=student}
+
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.ErrorTracker:97] throwQueryException() : no errors
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.QueryTranslatorImpl:258] HQL: select count(generatedAlias0.id), generatedAlias0.student from model1.Test as generatedAlias0 group by generatedAlias0.student
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.QueryTranslatorImpl:259] SQL: select count(test0_.test_id) as col_0_0_, test0_.student_id as col_1_0_, student1_.student_id as person_i1_2_, student1_1_.address_id as address_2_2_, student1_1_.fName as fname3_2_, student1_1_.sName as sname4_2_, student1_1_.email as email5_2_, student1_.semester as semester2_3_, student1_.indexNo as indexno3_3_, student1_.field_of_study_id as field_of4_3_ from Tests test0_ inner join Students student1_ on test0_.student_id=student1_.student_id inner join Persons student1_1_ on student1_.student_id=student1_1_.person_id group by test0_.student_id
+03 Dec 2020 20:09:42 [DEBUG] [org.hibernate.hql.internal.ast.ErrorTracker:97] throwQueryException() : no errors
